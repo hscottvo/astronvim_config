@@ -1,4 +1,6 @@
 return {
+  "AstroNvim/astrocommunity",
+  { import = "astrocommunity.colorscheme.catppuccin" },
   -- Configure AstroNvim updates
   updater = {
     remote = "origin", -- remote to use
@@ -18,7 +20,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "astrodark",
+  colorscheme = "catppuccin-frappe",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -27,6 +29,27 @@ return {
   },
 
   lsp = {
+    config = {
+      rust_analyzer = {
+        settings = {
+          ["rust-analyzer"] = {
+           cargo = {
+              extraEnv = { CARGO_PROFILE_RUST_ANALYZER_INHERITS = 'dev', },
+              extraArgs = { "--profile", "rust-analyzer", },
+            },
+            procMacro = {
+              ignored = {
+                  leptos_macro = {
+                      -- optional: --
+                      -- "component",
+                      "server",
+                  },
+              },
+            },
+          },
+        },
+      },
+    },
     -- customize lsp formatting options
     formatting = {
       -- control auto formatting on save
