@@ -8,6 +8,8 @@ return {
   { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.python" },
+  { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.svelte" },
   { import = "astrocommunity.motion.harpoon" },
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
 }
